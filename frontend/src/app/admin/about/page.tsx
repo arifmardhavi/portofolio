@@ -51,7 +51,11 @@ export default function AdminAboutPage() {
 
   const fetchIntroductions = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/introductions");
+      const res = await fetch("http://localhost:8000/api/admin/introductions", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        }
+      });
       const json = await res.json();
       if (json.success) {
         setIntroductions(json.data);
@@ -117,6 +121,7 @@ export default function AdminAboutPage() {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         },
         body: JSON.stringify(payload),
       });
@@ -139,7 +144,10 @@ export default function AdminAboutPage() {
     try {
       const res = await fetch(`http://localhost:8000/api/admin/introductions/${id}`, {
         method: "DELETE",
-        headers: { "Accept": "application/json" },
+        headers: {
+          "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        },
       });
       const json = await res.json();
       if (json.success) {
@@ -159,6 +167,7 @@ export default function AdminAboutPage() {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         },
         body: JSON.stringify({ ...intro, is_active: true }),
       });

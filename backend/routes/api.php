@@ -15,7 +15,11 @@ use App\Http\Controllers\Api\Admin\IntroductionController;
 Route::get('/about', [AboutController::class, 'index']);
 
 // Admin routes (later add auth middleware)
-Route::prefix('admin')->group(function () {
+Route::post('login', [AuthController::class, 'login']);
+
+Route::prefix('admin')->middleware('auth:sanctum')->group(function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::get('me', [AuthController::class, 'me']);
     Route::apiResource('introductions', IntroductionController::class);
     Route::apiResource('careers', CareerController::class);
     Route::apiResource('educations', EducationController::class);

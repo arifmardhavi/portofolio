@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { LayoutDashboard, User, Briefcase, GraduationCap, LogOut, Menu } from "lucide-react";
 
@@ -20,6 +22,10 @@ const navItems = [
 ];
 
 export function AdminSidebar({ className }: AdminSidebarProps) {
+  const handleLogout = () => {
+    localStorage.removeItem("admin_token");
+    window.location.href = "/login";
+  };
   return (
     <div className={className}>
       <div className="flex h-full max-h-screen flex-col gap-2">
@@ -43,7 +49,7 @@ export function AdminSidebar({ className }: AdminSidebarProps) {
           </nav>
         </div>
         <div className="mt-auto p-4">
-          <Button variant="outline" className="w-full justify-start gap-2">
+          <Button variant="outline" className="w-full justify-start gap-2" onClick={handleLogout}>
             <LogOut className="h-4 w-4" />
             Logout
           </Button>
@@ -54,6 +60,11 @@ export function AdminSidebar({ className }: AdminSidebarProps) {
 }
 
 export function MobileAdminSidebar() {
+  const handleLogout = () => {
+    localStorage.removeItem("admin_token");
+    window.location.href = "/login";
+  };
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -86,7 +97,7 @@ export function MobileAdminSidebar() {
           ))}
         </nav>
         <div className="mt-auto">
-          <Button variant="outline" className="w-full justify-start gap-2">
+          <Button variant="outline" className="w-full justify-start gap-2" onClick={handleLogout}>
             <LogOut className="h-4 w-4" />
             Logout
           </Button>

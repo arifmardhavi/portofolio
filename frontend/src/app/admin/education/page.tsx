@@ -60,7 +60,11 @@ export default function AdminEducationPage() {
 
   const fetchEducations = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/educations");
+      const res = await fetch("http://localhost:8000/api/admin/educations", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        }
+      });
       const json = await res.json();
       if (json.success) {
         setEducations(json.data);
@@ -114,6 +118,7 @@ export default function AdminEducationPage() {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         },
         body: JSON.stringify(formData),
       });
@@ -136,7 +141,10 @@ export default function AdminEducationPage() {
     try {
       const res = await fetch(`http://localhost:8000/api/admin/educations/${id}`, {
         method: "DELETE",
-        headers: { "Accept": "application/json" },
+        headers: {
+          "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        },
       });
       const json = await res.json();
       if (json.success) {

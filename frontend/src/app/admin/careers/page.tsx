@@ -83,7 +83,11 @@ export default function AdminCareersPage() {
 
   const fetchCareers = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/careers");
+      const res = await fetch("http://localhost:8000/api/admin/careers", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        }
+      });
       const json = await res.json();
       if (json.success) {
         setCareers(json.data);
@@ -181,6 +185,7 @@ export default function AdminCareersPage() {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         },
         body: JSON.stringify(payload),
       });
@@ -203,7 +208,10 @@ export default function AdminCareersPage() {
     try {
       const res = await fetch(`http://localhost:8000/api/admin/careers/${id}`, {
         method: "DELETE",
-        headers: { "Accept": "application/json" },
+        headers: {
+          "Accept": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
+        },
       });
       const json = await res.json();
       if (json.success) {
