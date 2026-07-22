@@ -1,0 +1,27 @@
+{
+  ".claude/hooks/validate-bash.sh": {
+    "mtime": 1784679773.9243412,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  ".claude/setting.local.json": {
+    "mtime": 1784679773.8892615,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  ".claude/settings.json": {
+    "mtime": 1784680535.3687675,
+    "ast_hash": "f2e6228120f74f16dec61105f3447703",
+    "semantic_hash": "f2e6228120f74f16dec61105f3447703"
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1784681353.3941703,
+    "ast_hash": "5cd53baa89a3773fa8be868f1fbec55e",
+    "semantic_hash": "5cd53baa89a3773fa8be868f1fbec55e"
+  },
+  ".mcp.json": {
+    "mtime": 1784680710.6835015,
+    "ast_hash": "1a6618c9486afd375cdf1135b5b2acc4",
+    "semantic_hash": "1a6618c9486afd375cdf1135b5b2acc4"
+  }
+}
