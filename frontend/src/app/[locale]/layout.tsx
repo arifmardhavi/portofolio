@@ -21,9 +21,10 @@ export default async function LocaleLayout({
  
   const messages = await getMessages();
  
+  // suppressHydrationWarning is required on BOTH html and body tags when using next-themes
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -33,8 +34,8 @@ export default async function LocaleLayout({
           <NextIntlClientProvider messages={messages}>
             {children}
           </NextIntlClientProvider>
+          <Toaster />
         </ThemeProvider>
-        <Toaster />
       </body>
     </html>
   );
