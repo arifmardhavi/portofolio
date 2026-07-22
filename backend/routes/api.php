@@ -17,4 +17,6 @@ Route::get('/about', [AboutController::class, 'index']);
 // Admin routes (later add auth middleware)
 Route::prefix('admin')->group(function () {
     Route::apiResource('introductions', IntroductionController::class);
+    Route::apiResource('careers', CareerController::class);
+    Route::apiResource('educations', EducationController::class);
 });
