@@ -60,7 +60,7 @@ export default function AdminEducationPage() {
 
   const fetchEducations = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/educations", {
+      const res = await fetch("http://localhost:8081/api/admin/educations", {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         }
@@ -109,8 +109,8 @@ export default function AdminEducationPage() {
 
     try {
       const url = editingId
-        ? `http://localhost:8000/api/admin/educations/${editingId}`
-        : "http://localhost:8000/api/admin/educations";
+        ? `http://localhost:8081/api/admin/educations/${editingId}`
+        : "http://localhost:8081/api/admin/educations";
       const method = editingId ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -139,7 +139,7 @@ export default function AdminEducationPage() {
   const handleDelete = async (id: number) => {
     if (!confirm("Are you sure?")) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/educations/${id}`, {
+      const res = await fetch(`http://localhost:8081/api/admin/educations/${id}`, {
         method: "DELETE",
         headers: {
           "Accept": "application/json",

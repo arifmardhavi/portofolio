@@ -83,7 +83,7 @@ export default function AdminCareersPage() {
 
   const fetchCareers = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/careers", {
+      const res = await fetch("http://localhost:8081/api/admin/careers", {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         }
@@ -176,8 +176,8 @@ export default function AdminCareersPage() {
 
     try {
       const url = editingId
-        ? `http://localhost:8000/api/admin/careers/${editingId}`
-        : "http://localhost:8000/api/admin/careers";
+        ? `http://localhost:8081/api/admin/careers/${editingId}`
+        : "http://localhost:8081/api/admin/careers";
       const method = editingId ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -206,7 +206,7 @@ export default function AdminCareersPage() {
   const handleDelete = async (id: number) => {
     if (!confirm("Are you sure?")) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/careers/${id}`, {
+      const res = await fetch(`http://localhost:8081/api/admin/careers/${id}`, {
         method: "DELETE",
         headers: {
           "Accept": "application/json",

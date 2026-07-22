@@ -51,7 +51,7 @@ export default function AdminAboutPage() {
 
   const fetchIntroductions = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/admin/introductions", {
+      const res = await fetch("http://localhost:8081/api/admin/introductions", {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("admin_token")}`
         }
@@ -112,8 +112,8 @@ export default function AdminAboutPage() {
 
     try {
       const url = editingId
-        ? `http://localhost:8000/api/admin/introductions/${editingId}`
-        : "http://localhost:8000/api/admin/introductions";
+        ? `http://localhost:8081/api/admin/introductions/${editingId}`
+        : "http://localhost:8081/api/admin/introductions";
       const method = editingId ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -142,7 +142,7 @@ export default function AdminAboutPage() {
   const handleDelete = async (id: number) => {
     if (!confirm("Are you sure?")) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/introductions/${id}`, {
+      const res = await fetch(`http://localhost:8081/api/admin/introductions/${id}`, {
         method: "DELETE",
         headers: {
           "Accept": "application/json",
@@ -162,7 +162,7 @@ export default function AdminAboutPage() {
   const handleToggleActive = async (intro: Introduction) => {
     if (intro.is_active) return; // Don't allow toggling off directly, only toggling another ON
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/introductions/${intro.id}`, {
+      const res = await fetch(`http://localhost:8081/api/admin/introductions/${intro.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
