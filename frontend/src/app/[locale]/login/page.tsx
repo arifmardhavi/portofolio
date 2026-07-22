@@ -37,7 +37,7 @@ export default function LoginPage() {
         // Untuk contoh ini pakai localStorage
         localStorage.setItem("admin_token", json.data.token);
         toast.success("Login successful");
-        router.push("/admin/dashboard");
+        router.push("/en/admin/dashboard");
       } else {
         toast.error(json.message || "Login failed");
       }

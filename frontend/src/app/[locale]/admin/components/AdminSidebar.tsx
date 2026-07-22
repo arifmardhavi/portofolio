@@ -24,13 +24,13 @@ const navItems = [
 export function AdminSidebar({ className }: AdminSidebarProps) {
   const handleLogout = () => {
     localStorage.removeItem("admin_token");
-    window.location.href = "/login";
+    window.location.href = "/en/login";
   };
   return (
     <div className={className}>
       <div className="flex h-full max-h-screen flex-col gap-2">
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-          <Link href="/admin/dashboard" className="flex items-center gap-2 font-semibold">
+          <Link href="/en/admin/dashboard" className="flex items-center gap-2 font-semibold">
             <span className="">Admin Panel</span>
           </Link>
         </div>
@@ -62,7 +62,7 @@ export function AdminSidebar({ className }: AdminSidebarProps) {
 export function MobileAdminSidebar() {
   const handleLogout = () => {
     localStorage.removeItem("admin_token");
-    window.location.href = "/login";
+    window.location.href = "/en/login";
   };
 
   return (
@@ -80,7 +80,7 @@ export function MobileAdminSidebar() {
       <SheetContent side="left" className="flex flex-col">
         <nav className="grid gap-2 text-lg font-medium">
           <Link
-            href="/admin/dashboard"
+            href="/en/admin/dashboard"
             className="flex items-center gap-2 text-lg font-semibold mb-4"
           >
             <span>Admin Panel</span>
