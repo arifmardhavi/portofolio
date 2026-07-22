@@ -67,15 +67,11 @@ export function MobileAdminSidebar() {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="shrink-0 md:hidden"
-        >
+      <SheetTrigger>
+        <div className="flex h-9 w-9 shrink-0 md:hidden items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground cursor-pointer">
           <Menu className="h-5 w-5" />
           <span className="sr-only">Toggle navigation menu</span>
-        </Button>
+        </div>
       </SheetTrigger>
       <SheetContent side="left" className="flex flex-col">
         <nav className="grid gap-2 text-lg font-medium">
