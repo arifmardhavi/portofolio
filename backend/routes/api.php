@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\Admin\IntroductionController;
+use App\Http\Controllers\Api\Admin\CareerController;
+use App\Http\Controllers\Api\Admin\EducationController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
