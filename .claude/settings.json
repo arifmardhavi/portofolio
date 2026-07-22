@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "after": {
+      "commit-on-change": {
+        "description": "Automatically commit changes when files are modified, but DO NOT push.",
+        "script": "if git status --porcelain | grep -q '^'; then git add . && git commit -m \"chore: auto-commit changes (pending manual push)\"; fi"
+      }
+    }
+  }
+}

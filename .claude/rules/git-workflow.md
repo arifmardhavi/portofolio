@@ -1,7 +1,8 @@
 # Git Workflow Rules
 
 ## Commit
-Kamu diizinkan untuk membuat commit secara mandiri (otomatis) saat menyelesaikan unit pekerjaan kecil. Selalu ikuti `commit-messages.md` untuk standar penamaannya.
+Kamu WAJIB membuat commit secara mandiri (otomatis) segera setelah ada perubahan atau penambahan (menyelesaikan unit pekerjaan, menambah file, memperbaiki bug, dsb). 
+Selalu ikuti `commit-messages.md` untuk standar penamaannya.
 
 ## Push
 **DILARANG** melakukan `git push` secara otomatis.
